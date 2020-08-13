@@ -1,0 +1,6 @@
+  <h1>Create a New Cocktail</h1>
+      <%= simple_form_for (@cocktail) do |f| %>
+      <%= f.label "Name" %><br>
+      <%= f.text_field :name %>
+      <%= f.submit "Submit", class: "btn btn-primary" %>
+    <% end %>
