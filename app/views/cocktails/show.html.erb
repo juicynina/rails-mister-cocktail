@@ -1,1 +1,16 @@
-<h2 class='border-bottom my-4 pb-2'><%= @cocktail.name %></h2>
+
+<h1><%= @cocktail.name %></h1>
+<h2>Dosification</h2>
+<ul class='mt-3'>
+    <% @doses.each do |dose| %>
+    <li><%= dose.description %></li>
+    <li><%= dose.ingredient.name %></li>
+    <%= link_to "<i class='fas fa-trash-all'></i>".html_safe,
+        dose_path(dose),
+        method: :delete,
+        data: {confirm: 'Are you sure you want to erase?'} %>
+  <% end %>
+</ul>
+
+<%= link_to "Create dose", new_cocktail_dose_path(@cocktail) %><br>
+<%= link_to "Go back to Cocktails", cocktails_path %>
