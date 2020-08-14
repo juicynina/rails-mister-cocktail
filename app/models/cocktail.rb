@@ -3,5 +3,5 @@ class Cocktail < ApplicationRecord
   has_many :ingredients, through: :doses
 
   validates :name, presence: true, uniqueness: true
-  validate :picture, presence: true
+  validates :picture_url, presence: true
 end
