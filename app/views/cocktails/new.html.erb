@@ -1,6 +1,12 @@
+<div class="container p-2 m-2">
   <h1>Create a New Cocktail</h1>
+    <div class="card p-2 m-2">
       <%= simple_form_for (@cocktail) do |f| %>
-      <%= f.label "Name" %><br>
+      <%= f.label "Name" %>
       <%= f.text_field :name %>
+      <%= f.label "Picture" %>
+      <%= f.text_field :picture_url %>
       <%= f.submit "Submit", class: "btn btn-primary" %>
     <% end %>
+    </div>
+</div>
