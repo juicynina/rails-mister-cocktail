@@ -8,6 +8,9 @@
 require 'open-uri'
 require 'json'
 
+Ingredient.destroy_all
+Cocktail.destroy_all
+
 puts 'Seeding ingredients...'
 
 url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
@@ -21,3 +24,7 @@ end
 
 puts 'Finished'
 
+file_cocktail_1 = URI.open('https://cde.peru.com//ima/0/1/7/1/1/1711304/924x530/machu-picchu.jpg')
+cocktail_1 = Cocktail.create!(name: 'machu picchu')
+cocktail_1.photo.attach(io: file_cocktail_1, filename: 'machu_picchu.jpg', content_type: 'image/jpg')
+cocktail_1.save
