@@ -1,8 +1,39 @@
-<h1>Cocktails List</h1>
-<ul>
+<h1>Find your favorite cocktail</h1>
+
+<!-- <ul>
     <% @cocktails.each do |cocktail| %>
     <li><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
   <% end %>
-</ul>
+ </ul> -->
 
-<%= link_to "Create new Cocktail", new_cocktail_path %>
+<div class="container">
+  <div class="row">
+    <div class="cards col-12 col-md-6 col-lg-3">
+      <% @cocktails.each do |cocktail| %>
+        <%= link_to cocktail.name, cocktail_path(cocktail) %>
+        <div class="drink-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+        url('<%= cl_image_path cocktail.photo.key if
+        cocktail.photo.attached? %>');">
+        <% end %>
+        </div>
+      </div>
+  </div>
+
+  <div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    Juicy Cocktails bringing you delicious recipes made with <i class="fas fa-heart"></i> from batch # 443
+  </div>
+</div>
+</div>
+ -->
+<!-- <%= link_to "Create new Cocktail", new_cocktail_path %> -->
+
+
+
